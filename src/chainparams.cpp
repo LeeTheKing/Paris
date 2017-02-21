@@ -109,9 +109,9 @@ public:
         nDefaultPort = 6661;
         bnProofOfWorkLimit = ~uint256(0) >> 32;
         bnInitialHashTarget = ~uint256(0) >> 32;
-        nEnforceBlockUpgradeMajority = 750;
-        nRejectBlockOutdatedMajority = 950;
-        nToCheckBlockUpgradeMajority = 1000;
+        nEnforceBlockUpgradeMajority = 75;
+        nRejectBlockOutdatedMajority = 95;
+        nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
         nTargetTimespan = 7 * 24 * 60 * 60; // one week
         nTargetSpacing = 10 * 60;           // 10 minutes. affects network code only
@@ -121,7 +121,7 @@ public:
         nCoinbaseMaturity = 12;                       // coinbase transaction outputs can only be spent after this number of new blocks (12+20 = 32)
         nStakeTargetSpacing = 10 * 60;                // 10 minutes
         nTargetSpacingMax = 12 * nStakeTargetSpacing; // 2 hours
-        nStakeMinAge = 60 * 60 * 24 * 30;             // minimum age for coin age
+        nStakeMinAge = 60 * 60 * 10 * 2;             // minimum age for coin age 20 hours
         nStakeMaxAge = 60 * 60 * 24 * 90;             // stake age of full weight
         nStakeModifierInterval = 6 * 60 * 60;         // time to elapse before new modifier is computed
         nMaxTipAge = 24 * 60 * 60;
