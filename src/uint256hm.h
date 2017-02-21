@@ -1,11 +1,11 @@
 /*
  * HashMap container for uint256 index -> value
- * Part of EmerCoin project.
+ * Part of Paris project.
  *
  */
 
-#ifndef EMC_UINT256HM_H
-#define EMC_UINT256HM_H
+#ifndef Paris_UINT256HM_H
+#define Paris_UINT256HM_H
 
 #include "uint256.h"
 #include "random.h"

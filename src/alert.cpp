@@ -121,7 +121,7 @@ bool CAlert::AppliesTo(int nVersion, std::string strSubVerIn) const
 
 bool CAlert::AppliesToMe() const
 {
-    return AppliesTo(PROTOCOL_VERSION, FormatSubVersion(CLIENT_NAME, EMERCOIN_VERSION, std::vector<std::string>()));
+    return AppliesTo(PROTOCOL_VERSION, FormatSubVersion(CLIENT_NAME, Paris_VERSION, std::vector<std::string>()));
 }
 
 bool CAlert::RelayTo(CNode* pnode) const

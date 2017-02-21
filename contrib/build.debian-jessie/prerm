@@ -5,12 +5,12 @@ set -e
 
 case "$1" in
   remove|deconfigure|abort-install)
-    rm -f /var/tmp/emercoin-install.flag
-    systemctl is-enabled emercoind >/dev/null && systemctl disable emercoind >/dev/null || true
-    systemctl status emercoind >/dev/null && systemctl stop emercoind >/dev/null || true
+    rm -f /var/tmp/Paris-install.flag
+    systemctl is-enabled Parisd >/dev/null && systemctl disable Parisd >/dev/null || true
+    systemctl status Parisd >/dev/null && systemctl stop Parisd >/dev/null || true
     pkill -9 -u emc > /dev/null 2>&1 || true
     getent passwd emc >/dev/null && userdel emc >/dev/null 2>&1 || true
-    rm -f /etc/ssl/emc/emercoin.key /etc/ssl/emc/emercoin.crt /etc/emercoin/emercoin.conf /etc/emercoin/certs
+    rm -f /etc/ssl/emc/Paris.key /etc/ssl/emc/Paris.crt /etc/Paris/Paris.conf /etc/Paris/certs
   ;;
 esac
 

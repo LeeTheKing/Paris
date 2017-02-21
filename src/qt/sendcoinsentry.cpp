@@ -41,7 +41,7 @@ SendCoinsEntry::SendCoinsEntry(QWidget *parent) :
     connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(deleteClicked()));
     connect(ui->deleteButton_is, SIGNAL(clicked()), this, SLOT(deleteClicked()));
     connect(ui->deleteButton_s, SIGNAL(clicked()), this, SLOT(deleteClicked()));
-    ui->payTo->setValidator(0);  // emercoin: disable validator so that we can type names
+    ui->payTo->setValidator(0);  // Paris: disable validator so that we can type names
 }
 
 SendCoinsEntry::~SendCoinsEntry()

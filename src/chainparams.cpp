@@ -157,13 +157,13 @@ public:
         assert(hashGenesisBlock == uint256("0x00000000bcccd459d036a588d1008fce8da3754b205736f32ddfd35350e84c2d"));
         assert(genesis.hashMerkleRoot == uint256("0xd8eee032f95716d0cf14231dc7a238b96bbf827e349e75344c9a88e849262ee0"));
 
-        vSeeds.push_back(CDNSSeedData("emercoin.com", "seed.emercoin.com"));
-        vSeeds.push_back(CDNSSeedData("emercoin.net", "seed.emercoin.net"));
+        vSeeds.push_back(CDNSSeedData("Paris.com", "seed.Paris.com"));
+        vSeeds.push_back(CDNSSeedData("Paris.net", "seed.Paris.net"));
         vSeeds.push_back(CDNSSeedData("emergate.net", "seed.emergate.net"));
         vSeeds.push_back(CDNSSeedData("emcdns", "seed.emc"));
 
-        base58Prefixes[PUBKEY_ADDRESS] = list_of(33);   // emercoin: addresses begin with 'E'
-        base58Prefixes[SCRIPT_ADDRESS] = list_of(92);   // emercoin: addresses begin with 'e'
+        base58Prefixes[PUBKEY_ADDRESS] = list_of(33);   // Paris: addresses begin with 'E'
+        base58Prefixes[SCRIPT_ADDRESS] = list_of(92);   // Paris: addresses begin with 'e'
         base58Prefixes[SECRET_KEY] =     list_of(128);
         base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E);
         base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4);
@@ -222,7 +222,7 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("emercoin", "tnseed.emercoin.com"));
+        vSeeds.push_back(CDNSSeedData("Paris", "tnseed.Paris.com"));
 
         base58Prefixes[PUBKEY_ADDRESS] = list_of(111);
         base58Prefixes[SCRIPT_ADDRESS] = list_of(196);

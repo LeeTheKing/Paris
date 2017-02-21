@@ -272,7 +272,7 @@ QString TransactionDesc::toHTML(CWallet *wallet, CWalletTx &wtx, TransactionReco
     //
     // Debug view
     //
-    if (true)      // emercoin: enable debug view print even when not debuging
+    if (true)      // Paris: enable debug view print even when not debuging
     {
         strHTML += "<hr><br>" + tr("Debug information") + "<br><br>";
         BOOST_FOREACH(const CTxIn& txin, wtx.vin)

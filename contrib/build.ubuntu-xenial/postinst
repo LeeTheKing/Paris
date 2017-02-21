@@ -5,19 +5,19 @@ set -e
 
 case "$1" in
   configure)
-    sed -i -e "s/\(^rpcpassword\)\(.*\)/rpcpassword=$(pwgen 64 1)/" /var/lib/emc/.emercoin/emercoin.conf
-    chmod 600 /var/lib/emc/.emercoin/emercoin.conf
-    chown -R emc.emc /var/lib/emc/.emercoin
-    mkdir -p /etc/emercoin
-    ln -sf /var/lib/emc/.emercoin/emercoin.conf /etc/emercoin/emercoin.conf || true
-    ln -sf /etc/ssl/emc /etc/emercoin/certs || true
+    sed -i -e "s/\(^rpcpassword\)\(.*\)/rpcpassword=$(pwgen 64 1)/" /var/lib/emc/.Paris/Paris.conf
+    chmod 600 /var/lib/emc/.Paris/Paris.conf
+    chown -R emc.emc /var/lib/emc/.Paris
+    mkdir -p /etc/Paris
+    ln -sf /var/lib/emc/.Paris/Paris.conf /etc/Paris/Paris.conf || true
+    ln -sf /etc/ssl/emc /etc/Paris/certs || true
     systemctl daemon-reload
-    [ -f /var/tmp/emercoin-install.flag ] && {
-      rm -f /var/tmp/emercoin-install.flag
-      systemctl enable emercoind
+    [ -f /var/tmp/Paris-install.flag ] && {
+      rm -f /var/tmp/Paris-install.flag
+      systemctl enable Parisd
     }
-    systemctl status emercoind >/dev/null 2>&1 && systemctl restart emercoind || {
-      systemctl is-enabled emercoind >/dev/null 2>&1 && systemctl start emercoind || true
+    systemctl status Parisd >/dev/null 2>&1 && systemctl restart Parisd || {
+      systemctl is-enabled Parisd >/dev/null 2>&1 && systemctl start Parisd || true
     }
   ;;
 esac

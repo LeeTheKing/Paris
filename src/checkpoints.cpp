@@ -186,7 +186,7 @@ bool AcceptPendingSyncCheckpoint()
     if (!chainActive.Contains(mapBlockIndex[hashPendingCheckpoint]))
         return false;
 
-    // emercoin: checkpoint needs to be a block with 32 confirmation
+    // Paris: checkpoint needs to be a block with 32 confirmation
     if (mapBlockIndex[hashPendingCheckpoint]->nHeight > chainActive.Height() - 32)
         return false;
 
@@ -314,7 +314,7 @@ bool ResetSyncCheckpoint()
         }
     }
 
-    if (mapBlockIndex.empty())  //emercoin: this might happen during reindexing
+    if (mapBlockIndex.empty())  //Paris: this might happen during reindexing
     {
         if (!WriteSyncCheckpoint(Params().HashGenesisBlock()))
             return error("ResetSyncCheckpoint: failed to write sync checkpoint %s", hash.ToString());
@@ -399,7 +399,7 @@ bool IsSyncCheckpointTooOld(unsigned int nSeconds)
 
 
 
-// emercoin: sync-checkpoint master key
+// Paris: sync-checkpoint master key
 std::string CSyncCheckpoint::strMasterPrivKey = "";
 
 // ppcoin: verify signature of sync-checkpoint message

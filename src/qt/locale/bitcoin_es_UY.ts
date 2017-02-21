@@ -159,8 +159,8 @@
         <translation>Barra de herramientas</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Emercoin network</source>
-        <translation><numerusform>%n conexión activa a la red Emercoin </numerusform><numerusform>%n conexiones activas a la red Emercoin</numerusform></translation>
+        <source>%n active connection(s) to Paris network</source>
+        <translation><numerusform>%n conexión activa a la red Paris </numerusform><numerusform>%n conexiones activas a la red Paris</numerusform></translation>
     </message>
     <message>
         <source>Up to date</source>

@@ -35,8 +35,8 @@
         <translation>Билдирүүнү &amp;текшерүү...</translation>
     </message>
     <message>
-        <source>Emercoin</source>
-        <translation>Emercoin</translation>
+        <source>Paris</source>
+        <translation>Paris</translation>
     </message>
     <message>
         <source>Wallet</source>

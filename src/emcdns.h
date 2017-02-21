@@ -1,5 +1,5 @@
-#ifndef EMCDNS_H
-#define EMCDNS_H
+#ifndef ParisDNS_H
+#define ParisDNS_H
 
 #include <string>
 #include <map>
@@ -13,8 +13,8 @@ using namespace std;
 #include "pubkey.h"
 
 
-#define EMCDNS_DAPSIZE     (8 * 1024)
-#define EMCDNS_DAPTRESHOLD 3000 // 200K/min limit answer
+#define ParisDNS_DAPSIZE     (8 * 1024)
+#define ParisDNS_DAPTRESHOLD 3000 // 200K/min limit answer
 
 #define VERMASK_NEW	-1
 #define VERMASK_BLOCKED -2
@@ -128,5 +128,5 @@ class EmcDns {
     vector<TollFree>      m_tollfree;
 }; // class EmcDns
 
-#endif // EMCDNS_H
+#endif // ParisDNS_H
 

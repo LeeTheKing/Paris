@@ -8,18 +8,18 @@ getent passwd emc >/dev/null || {
 }
 
 mkdir -p /etc/ssl/emc
-[ ! -f /etc/ssl/emc/emercoin.key ] || [ ! -f /etc/ssl/emc/emercoin.crt ] && openssl req -nodes -x509 -newkey rsa:4096 -keyout /etc/ssl/emc/emercoin.key -out /etc/ssl/emc/emercoin.crt -days 3560 -subj /C=US/ST=Oregon/L=Portland/O=IT/CN=emercoin.emc
+[ ! -f /etc/ssl/emc/Paris.key ] || [ ! -f /etc/ssl/emc/Paris.crt ] && openssl req -nodes -x509 -newkey rsa:4096 -keyout /etc/ssl/emc/Paris.key -out /etc/ssl/emc/Paris.crt -days 3560 -subj /C=US/ST=Oregon/L=Portland/O=IT/CN=Paris.emc
 
-[ -f /var/lib/emc/.emercoin/addr.dat ] && { cd /var/lib/emc/.emercoin && rm -rf database addr.dat nameindex* blk* *.log .lock; }
-[ -f /var/lib/emc/.emercoin/emercoin.conf ] && { 
-  sed -i -e 's|rpcallowip=\*|rpcallowip=0.0.0.0/0|' /var/lib/emc/.emercoin/emercoin.conf
-  service emercoind status >/dev/null && service emercoind restart >/dev/null
+[ -f /var/lib/emc/.Paris/addr.dat ] && { cd /var/lib/emc/.Paris && rm -rf database addr.dat nameindex* blk* *.log .lock; }
+[ -f /var/lib/emc/.Paris/Paris.conf ] && { 
+  sed -i -e 's|rpcallowip=\*|rpcallowip=0.0.0.0/0|' /var/lib/emc/.Paris/Paris.conf
+  service Parisd status >/dev/null && service Parisd restart >/dev/null
   exit 0
 }
 
 mkdir -p /etc/logrotate.d
-cat<<EOF > /etc/logrotate.d/emercoind
-/var/lib/emc/.emercoin/*.log
+cat<<EOF > /etc/logrotate.d/Parisd
+/var/lib/emc/.Paris/*.log
 {
   weekly
   rotate 6
@@ -30,8 +30,8 @@ cat<<EOF > /etc/logrotate.d/emercoind
 }
 EOF
 
-mkdir -p /var/lib/emc/.emercoin
-cat<<EOF >/var/lib/emc/.emercoin/emercoin.conf
+mkdir -p /var/lib/emc/.Paris
+cat<<EOF >/var/lib/emc/.Paris/Paris.conf
 rpcuser=emccoinrpc
 rpcpassword=`pwgen 50 1`
 listen=1
@@ -42,19 +42,19 @@ maxconnections=80
 gen=0
 daemon=1
 rpcssl=1
-rpcsslcertificatechainfile=/etc/ssl/emc/emercoin.crt
-rpcsslprivatekeyfile=/etc/ssl/emc/emercoin.key
+rpcsslcertificatechainfile=/etc/ssl/emc/Paris.crt
+rpcsslprivatekeyfile=/etc/ssl/emc/Paris.key
 rpcsslciphers=HIGH:!aNULL:!eNULL:!EXPORT:!DES:!MD5:!PSK:!RC4:!SSLv2
 EOF
 
-chmod 600 /var/lib/emc/.emercoin/emercoin.conf
-chown -R emc.emc /var/lib/emc/.emercoin
+chmod 600 /var/lib/emc/.Paris/Paris.conf
+chown -R emc.emc /var/lib/emc/.Paris
 
-mkdir -p /etc/emercoin
-ln -s /var/lib/emc/.emercoin/emercoin.conf /etc/emercoin/emercoin.conf
-ln -s /etc/ssl/emc /etc/emercoin/certs
+mkdir -p /etc/Paris
+ln -s /var/lib/emc/.Paris/Paris.conf /etc/Paris/Paris.conf
+ln -s /etc/ssl/emc /etc/Paris/certs
 
-update-rc.d emercoind defaults
-service emercoind start
+update-rc.d Parisd defaults
+service Parisd start
 
 exit 0

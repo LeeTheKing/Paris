@@ -2,11 +2,11 @@
 
 *.exe
 src/bitcoin
-src/emercoind
-src/emercoin-cli
-src/emercoin-tx
-src/test/test_emercoin
-src/qt/test/test_emercoin-qt
+src/Parisd
+src/Paris-cli
+src/Paris-tx
+src/test/test_Paris
+src/qt/test/test_Paris-qt
 
 # autoreconf
 Makefile.in
@@ -74,12 +74,12 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-emercoin-qt
-Emercoin-Qt.app
+Paris-qt
+Paris-Qt.app
 
 # Unit-tests
 Makefile.test
-emercoin-qt_test
+Paris-qt_test
 src/test/buildenv.py
 
 # Resources cpp

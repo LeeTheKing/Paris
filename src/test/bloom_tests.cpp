@@ -2,7 +2,7 @@
 // Distributed under the GPL3 software license, see the accompanying
 // file COPYING or http://www.gnu.org/licenses/gpl.html.
 
-// emercoin: redo this with emercoin blocks and tx.
+// Paris: redo this with Paris blocks and tx.
 
 #if 0
 

@@ -1,2 +1,2 @@
-/var/lib/emc/.emercoin/emercoin.conf
-/etc/logrotate.d/emercoind
+/var/lib/emc/.Paris/Paris.conf
+/etc/logrotate.d/Parisd
